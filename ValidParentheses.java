@@ -1,4 +1,4 @@
-package HackerRank;
+
 
 import java.util.HashMap;
 import java.util.Stack;
@@ -15,18 +15,6 @@ public class ValidParentheses {
             map.put('}', '{');
 
             Stack<Character> stack = new Stack<>();
-//            for (int i = 0; i < s.length(); i++) {
-//                c = s.charAt(i);
-//                if (c == ')' || c == ']' || c == '}') {
-//                    if (stack.isEmpty() ||  stack.peek() !=  map.get(c)) {
-//                        return false;
-//                    } else {
-//                        stack.pop();
-//                    }
-//                } else {
-//                    stack.push(c);
-//                }
-//            }
 
             for (char c : s.toCharArray() ) {
                 if(map.containsKey(c)){
@@ -40,5 +28,10 @@ public class ValidParentheses {
             }
             return stack.isEmpty();
         }
+    }
+
+    public static void main(String[] args) {
+        String s = "()()((";
+        System.out.println(isValid(s));
     }
 }
