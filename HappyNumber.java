@@ -1,4 +1,4 @@
-package HackerRank;
+
 
 //LeetCode
 public class HappyNumber {
