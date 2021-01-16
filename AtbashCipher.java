@@ -1,4 +1,4 @@
-package HackerRank;
+
 
 //BinarySearch
 //You are given a lowercase alphabet string text. 

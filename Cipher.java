@@ -1,4 +1,4 @@
-package HackerRank;
+
 
 //You are given a lowercase alphabet string text, and another string key. Return a new string where every letter in text[i] is moved to the right with offset key[i]. Offset is equal to key[i]'s position in the alphabet (A=0, B=1 etc.)
 //
