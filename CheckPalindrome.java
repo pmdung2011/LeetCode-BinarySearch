@@ -1,4 +1,4 @@
-package HackerRank;
+
 
 import java.util.Objects;
 
@@ -44,7 +44,7 @@ public class CheckPalindrome {
         }
         int counter = 0;
         //Remove space and special characters
-        str = str.replaceAll("\\W", "").toLowerCase();
+        str = str.replaceAll("[^a-zA-Z]", "").toLowerCase();
         System.out.println("new String: " + str);
         for (int i = 0; i < str.length()/2 ; i++) {
             if(str.charAt(i) == str.charAt(str.length()-i-1)){
@@ -55,9 +55,9 @@ public class CheckPalindrome {
     }
 
     public static void main(String[] args){
-        String str1 = "Hannahx";
-        String str2 = "cocoococ";
-        String str3 = "Race a car";
+        String str1 = "ab_A";
+        String str2 = "A man, a plan, a canal: Panama";
+        String str3 = "0P";
 
         System.out.println(isPanlindrome(str1));
         System.out.println(isPanlindrome(str2));

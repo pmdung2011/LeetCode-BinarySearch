@@ -1,4 +1,3 @@
-package HackerRank;
 
 import java.lang.Math;
 

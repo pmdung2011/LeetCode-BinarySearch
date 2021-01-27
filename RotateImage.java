@@ -1,4 +1,4 @@
-package HackerRank;
+
 
 public class RotateImage {
     public void rotate(int[][] matrix) {
