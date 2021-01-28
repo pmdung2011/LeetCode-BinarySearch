@@ -1,4 +1,4 @@
-package HackerRank;
+
 
 import java.util.*;
 
@@ -9,7 +9,7 @@ import java.util.*;
 * */
 //ONLY WORK FOR AN ARRAY WITH THREE ELEMENTS
 // A XOR B XOR A = B
-public class SingleNumber {
+public class  SingleNumber {
     //Only works with nums.length = odd, and only if nums has unique number.
     public static int singleNum(int[] nums){
         int a = 0;
@@ -51,10 +51,25 @@ public class SingleNumber {
         return 2*sumSet - sumNums;
     }
 
+
+    public static int solve(int[] nums){
+        int[] freg = new int[nums.length+1];
+        int res = 0;
+        for(int i : nums){
+            freg[i]++;
+        }
+        for (int i = 0; i < freg.length ; i++) {
+            if(freg[i] == 1){
+                res = i;
+                break;
+            }
+        }
+        return res;
+    }
     public static void main (String[] args){
 
         int[] nums = {2,2,1,1,3};
-        System.out.println(uniqueNum(nums));
+        System.out.println(solve(nums));
        // System.out.println(c);
 
     }

@@ -1,4 +1,4 @@
-package HackerRank;
+
 //206. Reverse Linked List
 class ListNoded{
     int val;
@@ -12,12 +12,12 @@ public class ReverseLinkedList {
     public ListNoded reverseList(ListNoded head) {
         ListNoded prev = null;
         ListNoded curr = head;
+        ListNoded next = null;
         while(curr != null){
-            ListNoded nextTemp = curr.next;
-            // prev curr next
+            next = curr.next;
             curr.next = prev;
             prev = curr;
-            curr = nextTemp;
+            curr = next;
         }
         return prev;
     }
