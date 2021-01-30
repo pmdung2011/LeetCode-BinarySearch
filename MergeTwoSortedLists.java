@@ -1,4 +1,4 @@
-package HackerRank;
+
 
 import java.util.List;
 
@@ -25,5 +25,33 @@ public class MergeTwoSortedLists {
             return new ListNode(l2.val, mergeTwoLists(l1,l2.next));
         }
 
+    }
+
+    public ListNode solve(ListNode l1, ListNode l2){
+        ListNode dummy = new ListNode(0);
+        ListNode tail = dummy;
+
+        //Traverse through both lists
+        while (l1 != null && l2 != null){
+            if(l1.val < l2.val){
+                dummy.next = l1;
+                l1 = l1.next;
+            }
+            else{
+                dummy.next = l2;
+                l2 = l2.next;
+            }
+            dummy = dummy.next;
+        }
+
+        //Remaining list
+        if(l1 != null){
+            dummy.next = l1;
+        }
+        else{
+            dummy.next = l2;
+        }
+
+        return tail.next;//tail is a head of dummy linkedlist
     }
 }

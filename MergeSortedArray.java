@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Solution {
+class  Solution {
     public int[] solve(int[] lst0, int[] lst1) {
         if (lst0 == null){
             return lst1;
