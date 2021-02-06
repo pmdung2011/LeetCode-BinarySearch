@@ -1,4 +1,3 @@
-package HackerRank;
 
 //BinarySearch
 //Given an integer n, return a list with each number from 1 to n,
