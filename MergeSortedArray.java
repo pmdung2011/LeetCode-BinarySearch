@@ -20,12 +20,12 @@ class  Solution {
             res[combinedTail--] = (lst0[tail1] > lst1[tail2]) ? lst0[tail1--] : lst1[tail2--];
         }
         
-        //in case still have remainding for
+        //in case still have remaining for
         //lst0
         while(tail1 >= 0){
             res[combinedTail--] = lst0[tail1--];
         }
-        
+        //lst1
         while(tail2 >= 0){
             res[combinedTail--] = lst1[tail2--];
         }
