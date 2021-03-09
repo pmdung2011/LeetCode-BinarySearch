@@ -1,4 +1,3 @@
-package HackerRank;
 
 public class SwapInPlace {
     public static void swap_1(int a, int b) {
