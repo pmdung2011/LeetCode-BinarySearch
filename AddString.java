@@ -1,6 +1,6 @@
 
 public class AddString {
-    public String addStrings(String num1, String num2){
+    public static String addStrings(String num1, String num2){
         int carry = 0;
         int i = num1.length() - 1;
         int j = num2.length() - 1;
@@ -20,6 +20,12 @@ public class AddString {
         }
 
         return sb.reverse().toString();
+    }
+
+    public static void main(String[] args) {
+        String num1 = "123";
+        String num2 = "4521";
+        System.out.println(addStrings(num1, num2));
     }
 }
 
