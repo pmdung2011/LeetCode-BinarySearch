@@ -38,20 +38,20 @@ public class CheckPalindrome {
          */
 //        return false;
 
-        //Method3: Wrong, the point in the test cases, that is non-letters cannot be removed, have
+        //Method3: Notice here is the regex, lowercase first before remove
 //        if (str == null || str.isEmpty()){
 //            return false;
 //        }
-//        int counter = 0;
+//        
 //        //Remove space and special characters
-//        str = str.replaceAll("[^a-zA-Z]", "").toLowerCase();
+//        str = str.toLowerCase().replaceAll("[^0-9a-z]", "");
 //        System.out.println("new String: " + str);
 //        for (int i = 0; i < str.length()/2 ; i++) {
 //            if(str.charAt(i) == str.charAt(str.length()-i-1)){
-//                counter++;
+//                return false;
 //            }
 //        }
-//        return counter == str.length()/2;
+//        return true;
 
         public static boolean isPanlindrome(String str){
             if(str == null || str.length() == 0) return true;
