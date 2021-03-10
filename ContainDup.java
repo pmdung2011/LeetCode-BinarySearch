@@ -1,8 +1,6 @@
-package HackerRank;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+
+import java.util.*;
 
 public class ContainDup {
     //O(n^2)
@@ -45,9 +43,27 @@ public class ContainDup {
         return false;
     }
 
+
+    //In case the array only contains 1-n with n length
+    public static String solve(int[] arr){
+        if(arr.length < 1) return "Null";
+        int i;
+        List<Integer> res = new ArrayList<>();
+        for (i = 0; i < arr.length; i++) {
+            int a = Math.abs(arr[i]);
+            if(arr[a-1] >= 0)
+                arr[a-1] = -arr[a-1];
+            else{
+                res.add(a);
+            }
+        }
+        return res.toString();
+    }
+
     public static void main(String[] args){
         int[] nums = {1,1,1,3,3,4,3,2,4,2};
         int[] arr = {1,2,3,4};
         System.out.println(containsDuplicate(arr));
+        System.out.println((solve(nums)));
     }
 }
