@@ -5,23 +5,32 @@ import java.util.List;
 
 //Wrong solution
 public class CountPrimes {
-    //    public static int countPrimes(int n) {
-//        List<Integer> nums = new ArrayList<>();
-//        for(int i = 1; i < n; i++){
-//            if(isPrime(i)) {nums.add(i);}
-//        }
-//        System.out.println(nums);
-//        return nums.size()-1;
-//    }
-//
-//    private static boolean isPrime(int n){
-//        if(n <=1 ) return false;
-//        if(n == 2) return true;
-//        if(n % 2 == 0) return false;
-//        for(int i = 3; i < Math.sqrt(n); i+= 2){
-//            if(n % i == 0) return false;
-//        }
-//        return true;
+    public int countPrimes2(int n) {
+        if (n <= 2)
+            return 0;
+
+        // init an array to track prime numbers
+        boolean[] primes = new boolean[n];
+        for (int i = 2; i < n; i++)
+            primes[i] = true;
+
+        for (int i = 2; i <= Math.sqrt(n - 1); i++) {
+            // or for (int i = 2; i <= n-1; i++) {
+            if (primes[i]) {
+                for (int j = i + i; j < n; j += i)
+                    primes[j] = false;
+            }
+        }
+
+        int count = 0;
+        for (int i = 2; i < n; i++) {
+            if (primes[i])
+                count++;
+        }
+
+        return count;
+    }
+
     public static int countPrimes(int n) {
 
         /**
