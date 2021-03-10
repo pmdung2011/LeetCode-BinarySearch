@@ -20,6 +20,6 @@ public class FizzBuzz {
 
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(solve(5)));
+        System.out.println(Arrays.toString(solve(100)));
     }
 }
