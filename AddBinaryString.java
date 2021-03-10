@@ -1,5 +1,3 @@
-package HackerRank;
-
 public class AddBinaryString {
     public static String addBinary(String a, String b) {
         StringBuilder result = new StringBuilder();
