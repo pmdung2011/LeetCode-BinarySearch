@@ -3,7 +3,7 @@
 import java.util.Objects;
 
 public class CheckPalindrome {
-    public static boolean isPanlindrome(String str) {
+
         //Method 1:
         //if (str== null){
   //          return false;
@@ -38,21 +38,53 @@ public class CheckPalindrome {
          */
 //        return false;
 
-        //Method3:
-        if (str == null || str.isEmpty()){
-            return false;
-        }
-        int counter = 0;
-        //Remove space and special characters
-        str = str.replaceAll("[^a-zA-Z]", "").toLowerCase();
-        System.out.println("new String: " + str);
-        for (int i = 0; i < str.length()/2 ; i++) {
-            if(str.charAt(i) == str.charAt(str.length()-i-1)){
-                counter++;
+        //Method3: Wrong, the point in the test cases, that is non-letters cannot be removed, have
+//        if (str == null || str.isEmpty()){
+//            return false;
+//        }
+//        int counter = 0;
+//        //Remove space and special characters
+//        str = str.replaceAll("[^a-zA-Z]", "").toLowerCase();
+//        System.out.println("new String: " + str);
+//        for (int i = 0; i < str.length()/2 ; i++) {
+//            if(str.charAt(i) == str.charAt(str.length()-i-1)){
+//                counter++;
+//            }
+//        }
+//        return counter == str.length()/2;
+
+        public static boolean isPanlindrome(String str){
+            if(str == null || str.length() == 0) return true;
+            int head = 0;
+            int tail = str.length()-1;
+            char cHead, cTail;
+
+            while (head <= tail){
+                cHead = str.charAt(head);
+                cTail = str.charAt(tail);
+
+                //Check if char at current index is character or not
+                //isLetterOrDigit returns true if is letter, false for digit
+                if(!Character.isLetterOrDigit(cHead)){
+                    //if false, means is digit, continue
+                    head++;
+                }
+                else if(!Character.isLetterOrDigit(cTail)){
+                    tail--;
+                }
+                //In case both of them are letters
+                else{
+                    cHead = Character.toLowerCase(cHead);
+                    cTail = Character.toLowerCase(cTail);
+                    //Check if the letters are the same or not
+                    if(cHead != cTail) return false;
+                    head++;
+                    tail--;
+                }
             }
+            return true;
         }
-        return counter == str.length()/2;
-    }
+
 
     public static void main(String[] args){
         String str1 = "ab_A";
