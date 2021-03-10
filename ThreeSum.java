@@ -52,4 +52,40 @@ public class ThreeSum {
         }
         return res;
     }
+
+    public static List<List<Integer>> solve2(int[] nums, int target){
+        List<List<Integer>> res = new ArrayList<>();
+        if(nums.length < 3 ) return res;
+        Arrays.sort(nums);
+        int n = nums.length;
+        // x  + y + z = target || y + z = target - x
+        for(int i = 0; i < n-2; i++){
+            //if(i > 0 && nums[i] == nums[i-1]) {continue; }
+            int left = i+1;
+            int right = n-1;
+            while(left < right){
+                int curSum = nums[left] + nums[right];
+                int requiredSum = target - nums[i];
+                if(curSum == requiredSum){
+                    res.add(Arrays.asList(nums[i], nums[left], nums[right]));
+                    while(left < right && nums[left] == nums[left+1]) left++;
+                    while(left < right && nums[right] == nums[right - 1]) right--;
+                    left++;
+                    right--;
+                    //left++;
+                }
+                else if(curSum > requiredSum){
+                    right--;
+                }
+                else{
+                    left++;
+                }
+            }
+        }
+        return res;
+    }
+    public static void main(String[] args) {
+        int[] nums = {1, 2, 3, 4, 5};
+        System.out.println(solve2(nums, 9));
+    }
 }
