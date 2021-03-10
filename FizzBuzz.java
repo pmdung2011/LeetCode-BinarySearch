@@ -18,6 +18,7 @@ public class FizzBuzz {
         return res;
     }
 
+
     public static void main(String[] args) {
         System.out.println(Arrays.toString(solve(5)));
     }
