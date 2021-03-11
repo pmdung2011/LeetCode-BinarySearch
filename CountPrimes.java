@@ -19,7 +19,7 @@ public class CountPrimes {
                 A[j] := false
 
     return all i such that A[i] is true.
-     
+
      */
     public int countPrimes2(int n) {
         if (n <= 2)

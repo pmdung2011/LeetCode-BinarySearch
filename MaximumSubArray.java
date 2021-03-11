@@ -17,7 +17,32 @@ public class MaximumSubArray {
         int[] a = {13, -3, -25, 20, -3, -16, -23, 18, 20};
         int result = maxSubArray(a);
         System.out.println("Result: " + result);
+        System.out.println(solve(a));
     }
+
+    //Using sliding window technique with size is 2
+    public static int solve(int[] nums){
+        if (nums.length < 2) return -1;
+
+        int k = 2;
+        int max_sum = 0;
+
+        //Get the first sum of the first window with size 2
+        for (int i = 0; i < k ; i++) {
+            max_sum += nums[i];
+        }
+
+        int window_sum = max_sum;
+        //Continue with the next window
+        for(int i = k; i < nums.length; i++){
+            window_sum += nums[i] - nums[i-k];
+            max_sum = Math.max(window_sum, max_sum);
+        }
+        return max_sum;
+    }
+
+
+
 }
 /*
 * Divide and Conquer
