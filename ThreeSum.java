@@ -18,34 +18,35 @@ import java.util.*;
  * using two pointer technique)
  */
 public class ThreeSum {
-    public static List<List<Integer>> solve(int[] nums){
+    public static List<List<Integer>> solve(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
-        if(nums.length < 3) return res; //It requires 3 nums at least in the array
+        if (nums.length < 3) return res; //It requires 3 nums at least in the array
         Arrays.sort(nums); //It takes O(nlogn) to sort but group same num together
 
         //Looking for X + Y + Z = 0 or X + Y = -Z
         //which are nums[i], nums[left], nums[right]
-        for (int i = 0; i < nums.length - 2 ; i++) {
-            if(i > 0 && nums[i] == nums[i-1]) {continue; }
+        for (int i = 0; i < nums.length - 2; i++) {
+            if (i > 0 && nums[i] == nums[i - 1]) {
+                continue;
+            }
             int left = i + 1;
             int right = nums.length - 1;
 
-            while(left < right){
+            while (left < right) {
                 int currentSum = nums[left] + nums[right];
                 //In case we found the 3 nums
-                if(currentSum == -nums[i]){
+                if (currentSum == -nums[i]) {
                     res.add(List.of(nums[i], nums[left], nums[right]));
                     left++;
                     //Skip the same num
-                    while(left < right && nums[left] == nums[left-1]){
+                    while (left < right && nums[left] == nums[left - 1]) {
                         left++;
                     }
                 }
                 //Narrow down the section
-                else if (currentSum > -nums[i]){
+                else if (currentSum > -nums[i]) {
                     right--;
-                }
-                else{
+                } else {
                     left++;
                 }
             }
@@ -53,38 +54,40 @@ public class ThreeSum {
         return res;
     }
 
-    public static List<List<Integer>> solve2(int[] nums, int target){
+    public static List<List<Integer>> solve2(int[] nums, int target) {
         List<List<Integer>> res = new ArrayList<>();
-        if(nums.length < 3 ) return res;
+        if (nums.length < 3) return res;
         Arrays.sort(nums);
         int n = nums.length;
         // x  + y + z = target || y + z = target - x
-        for(int i = 0; i < n-2; i++){
-            int left = i+1;
-            int right = n-1;
-            while(left < right){
+        for (int i = 0; i < n - 2; i++) {
+            if (i > 0 && nums[i] == nums[i - 1]) {              // skip same result
+                continue;
+            }
+            int left = i + 1;
+            int right = n - 1;
+            while (left < right) {
                 int curSum = nums[left] + nums[right];
                 int requiredSum = target - nums[i];
-                if(curSum == requiredSum){
+                if (curSum == requiredSum) {
                     res.add(Arrays.asList(nums[i], nums[left], nums[right]));
-                    while(left < right && nums[left] == nums[left+1]) left++;
-                    while(left < right && nums[right] == nums[right - 1]) right--;
+                    while (left < right && nums[left] == nums[left + 1]) left++;
+                    while (left < right && nums[right] == nums[right - 1]) right--;
                     left++;
                     right--;
                     //left++;
-                }
-                else if(curSum > requiredSum){
+                } else if (curSum > requiredSum) {
                     right--;
-                }
-                else{
+                } else {
                     left++;
                 }
             }
         }
         return res;
     }
+
     public static void main(String[] args) {
-        int[] nums = {1, 2, 3, 4, 5};
-        System.out.println(solve2(nums, 9));
+        int[] nums = {-1, 0, 1, 2, -1, -4};
+        System.out.println(solve2(nums, 0));
     }
 }
