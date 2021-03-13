@@ -42,7 +42,7 @@ public class CheckPalindrome {
 //        if (str == null || str.isEmpty()){
 //            return false;
 //        }
-//        
+//
 //        //Remove space and special characters
 //        str = str.toLowerCase().replaceAll("[^0-9a-z]", "");
 //        System.out.println("new String: " + str);
