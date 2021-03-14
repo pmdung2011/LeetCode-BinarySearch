@@ -1,4 +1,4 @@
-package HackerRank;
+//
 
 import java.util.*;
 
@@ -19,10 +19,9 @@ public class SockMerchant {
         return counter;
     }
 
-
     public static void main(String[] args) {
-        int[] socks = {4, 5, 5, 5, 6, 6, 4, 1, 4, 4, 3, 6, 6, 3, 6, 1, 4, 5, 5, 5};
-        int[] socks1 = {10, 20, 20, 10, 10, 30, 50, 10, 20};
+        int[] socks = { 4, 5, 5, 5, 6, 6, 4, 1, 4, 4, 3, 6, 6, 3, 6, 1, 4, 5, 5, 5 };
+        int[] socks1 = { 10, 20, 20, 10, 10, 30, 50, 10, 20 };
         int n = socks.length;
         System.out.println(sockMerchant(n, socks));
 

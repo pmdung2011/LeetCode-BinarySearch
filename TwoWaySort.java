@@ -1,4 +1,4 @@
-package HackerRank;
+//
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -40,15 +40,14 @@ public class TwoWaySort {
         }
 
         // Sort odd number in descending order
-        Arrays.sort(arr, 0, k, Collections.
-                reverseOrder());
+        Arrays.sort(arr, 0, k, Collections.reverseOrder());
 
         // Sort even number in ascending order
         Arrays.sort(arr, k, n);
     }
 
     public static void main(String[] args) {
-        Integer[] arr = {1, 3, 2, 7, 5, 4};
+        Integer[] arr = { 1, 3, 2, 7, 5, 4 };
 
         twoWaySort(arr, arr.length);
 

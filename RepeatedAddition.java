@@ -1,4 +1,4 @@
-package HackerRank;
+//
 
 public class RepeatedAddition {
     public static int solve(int n) {

@@ -1,4 +1,4 @@
-package HackerRank;
+//
 //1342. Number of Steps to Reduce a Number to Zero
 /*
 * Input: num = 14
@@ -12,21 +12,21 @@ Step 5) 2 is even; divide by 2 and obtain 1.
 Step 6) 1 is odd; subtract 1 and obtain 0.
 * */
 public class NumberOfSteptToZero {
-    public static int numberOfSteps (int num) {
+    public static int numberOfSteps(int num) {
         int counter = 0;
-        while(num!=0){
-            if(num%2 == 0){
-                num = num/2;
+        while (num != 0) {
+            if (num % 2 == 0) {
+                num = num / 2;
                 counter++;
-            }
-            else{
+            } else {
                 num--;
                 counter++;
             }
         }
         return counter;
     }
-    public static void main(String[] args){
+
+    public static void main(String[] args) {
         System.out.println("Input: 8");
         System.out.println("Steps: " + numberOfSteps(8));
 

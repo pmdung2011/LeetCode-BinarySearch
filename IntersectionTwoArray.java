@@ -1,4 +1,4 @@
-package HackerRank;
+//
 
 import java.util.*;
 
@@ -20,7 +20,7 @@ public class IntersectionTwoArray {
             }
         }
         int[] a = new int[l.size()];
-        //Convert List to array
+        // Convert List to array
         int count = 0;
         for (int k : l) {
             a[count++] = k;
@@ -29,8 +29,8 @@ public class IntersectionTwoArray {
     }
 
     public static void main(String[] args) {
-        int[] a = {9, 4, 9, 8, 4};
-        int[] b = {4, 4, 5};
+        int[] a = { 9, 4, 9, 8, 4 };
+        int[] b = { 4, 4, 5 };
         System.out.println(Arrays.toString(intersect(a, b)));
     }
 }

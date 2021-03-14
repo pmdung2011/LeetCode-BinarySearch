@@ -1,7 +1,4 @@
-package HackerRank;
-
-import java.util.Locale;
-
+//
 public class Acronym {
     public String solve(String s) {
         String[] words = s.split(" ");

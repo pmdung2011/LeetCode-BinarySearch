@@ -1,4 +1,4 @@
-package HackerRank;
+//
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -11,17 +11,17 @@ public class Checkerboard_Colors {
         int row = 0;
         InputStreamReader reader = new InputStreamReader(System.in, StandardCharsets.UTF_8);
         BufferedReader in = new BufferedReader(reader);
-        //System.out.println("Enter input: ");
+        // System.out.println("Enter input: ");
         String line;
         while ((line = in.readLine()) != null) {
-            //System.out.println(line);
+            // System.out.println(line);
             String result = "";
             if (line.length() == 2) {
                 col = Character.toLowerCase(line.charAt(0));
                 row = Integer.parseInt(String.valueOf(Character.toLowerCase(line.charAt(1))));
                 if ((col >= 'a' && col <= 'h') && (row >= 1 && row <= 8)) {
                     if (col == 'a' || col == 'c' || col == 'e' || col == 'g') {
-                        //odd row
+                        // odd row
                         result = (row % 2 != 0) ? "Black" : "White";
 
                     } else {

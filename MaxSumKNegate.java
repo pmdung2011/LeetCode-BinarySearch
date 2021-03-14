@@ -1,4 +1,4 @@
-package HackerRank;
+//
 
 import java.util.Arrays;
 
@@ -33,7 +33,7 @@ public class MaxSumKNegate {
     }
 
     public static void main(String[] args) {
-        int array[] = {1, 1};
+        int array[] = { 1, 1 };
         System.out.println(solve(array, 9));
     }
 }

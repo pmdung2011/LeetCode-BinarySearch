@@ -1,4 +1,4 @@
-package HackerRank;
+//
 //HackerRank
 
 import java.util.HashMap;
@@ -19,7 +19,6 @@ public class CountingValleys {
         }
         return valleys;
     }
-
 
     public static void main(String[] args) {
         int steps;

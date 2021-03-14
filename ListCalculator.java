@@ -1,4 +1,4 @@
-package HackerRank;
+//
 
 import java.util.Arrays;
 
@@ -21,7 +21,7 @@ public class ListCalculator {
     }
 
     public static void main(String[] args) {
-        int[] arr = {3, 1, 6};
+        int[] arr = { 3, 1, 6 };
         System.out.println(Arrays.toString(solve(arr, "+", 4)));
     }
 }

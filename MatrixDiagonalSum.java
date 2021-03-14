@@ -1,4 +1,4 @@
-package HackerRank;
+//
 
 import java.util.List;
 import java.util.Scanner;
@@ -10,80 +10,80 @@ public class MatrixDiagonalSum {
     private int sumR = 0;
     private final int row;
     private final int col;
-    public MatrixDiagonalSum(int row, int col){
-        this.row  = row;
+
+    public MatrixDiagonalSum(int row, int col) {
+        this.row = row;
         this.col = col;
     }
 
-    private void fillMatrix(int[][] matrix){
-        //Random rand = new Random();
+    private void fillMatrix(int[][] matrix) {
+        // Random rand = new Random();
         for (int r = 0; r < this.row; r++) {
-            for(int c = 0; c < this.col; c++){
-                matrix[r][c] = ThreadLocalRandom.current().nextInt(1,10); //Generate random number from range 1-10
+            for (int c = 0; c < this.col; c++) {
+                matrix[r][c] = ThreadLocalRandom.current().nextInt(1, 10); // Generate random number from range 1-10
             }
         }
     }
 
-    public int[][] matrixInit(){
-        int [][] matrix = new int[this.row][this.col];
+    public int[][] matrixInit() {
+        int[][] matrix = new int[this.row][this.col];
         fillMatrix(matrix);
 
         return matrix;
 
     }
 
-    public boolean isMatrixPerfect(){
+    public boolean isMatrixPerfect() {
         return this.row == this.col;
     }
 
-    private void matrixDiagonalSum(int[][] matrix){
-        //this.sum = 0;
-//        for (int r = 0; r < this.row; r++) {
-//            for(int c = 0; c < this.col; c++){
-//                if (r == c) {
-//                    //System.out.println("ElementLeft: " + matrix[r][c]);
-//                    this.sumL += matrix[r][c];
-//                }
-//                if (r+c == this.row - 1){
-//                    //System.out.println("ElementRight: " + matrix[r][c]);
-//                    this.sumR += matrix[r][c];
-//                }
-//            }
-//        }
-        for (int i = 0; i < this.row ; i++) {
+    private void matrixDiagonalSum(int[][] matrix) {
+        // this.sum = 0;
+        // for (int r = 0; r < this.row; r++) {
+        // for(int c = 0; c < this.col; c++){
+        // if (r == c) {
+        // //System.out.println("ElementLeft: " + matrix[r][c]);
+        // this.sumL += matrix[r][c];
+        // }
+        // if (r+c == this.row - 1){
+        // //System.out.println("ElementRight: " + matrix[r][c]);
+        // this.sumR += matrix[r][c];
+        // }
+        // }
+        // }
+        for (int i = 0; i < this.row; i++) {
             sumL += matrix[i][i];
-            sumR += matrix[i][this.row-1-i];
+            sumR += matrix[i][this.row - 1 - i];
         }
 
     }
 
-    //In case using List to create array
+    // In case using List to create array
     public static int diagonalDifference(List<List<Integer>> arr) {
         // Write your code here
         int sumL = 0;
         int sumR = 0;
-        for (int i = 0; i < arr.size(); i++){
+        for (int i = 0; i < arr.size(); i++) {
             sumL += arr.get(i).get(i);
-            sumR += arr.get(i).get(arr.size()-1-i);
+            sumR += arr.get(i).get(arr.size() - 1 - i);
         }
 
-        return Math.abs(sumL-sumR);
+        return Math.abs(sumL - sumR);
     }
 
-    public int getMatrixDiaSumLeft(){
+    public int getMatrixDiaSumLeft() {
         return this.sumL;
     }
 
-    public int getMatrixDiaSumRight(){
+    public int getMatrixDiaSumRight() {
         return this.sumR;
     }
 
-    public int getSumDiff(){
+    public int getSumDiff() {
         return Math.abs(this.sumL - this.sumR);
     }
 
-    public static void print2D(int[][] mat)
-    {
+    public static void print2D(int[][] mat) {
         System.out.println("Matrix");
         // Loop through all rows
         for (int[] row : mat)
@@ -94,43 +94,40 @@ public class MatrixDiagonalSum {
             System.out.println(Arrays.toString(row));
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Input row of matrix: ");
         int row = sc.nextInt();
         System.out.print("Input column of matrix: ");
         int col = sc.nextInt();
 
-        //Create class instance
-        MatrixDiagonalSum mSum = new MatrixDiagonalSum(row,col);
+        // Create class instance
+        MatrixDiagonalSum mSum = new MatrixDiagonalSum(row, col);
 
-        //Create matrix
+        // Create matrix
         int[][] matrix = mSum.matrixInit();
 
-        //Print matrix
+        // Print matrix
         print2D(matrix);
 
-//        00,01,02,03,04
-//        10,11,12,13,14
-//        20,21,22,23,24
-//        30,31,32,33,34
-//        40,41,42,43,44
+        // 00,01,02,03,04
+        // 10,11,12,13,14
+        // 20,21,22,23,24
+        // 30,31,32,33,34
+        // 40,41,42,43,44
 
-
-
-        //Check if the matrix is perfect
-        if(mSum.isMatrixPerfect()){
-            //Calculate diagonal sum
+        // Check if the matrix is perfect
+        if (mSum.isMatrixPerfect()) {
+            // Calculate diagonal sum
             mSum.matrixDiagonalSum(matrix);
-            //Get sum value
+            // Get sum value
             int sumL = mSum.getMatrixDiaSumLeft();
             int sumR = mSum.getMatrixDiaSumRight();
             int diff = mSum.getSumDiff();
             System.out.print("SumL: " + sumL + "\n");
             System.out.print("SumR: " + sumR + "\n");
             System.out.print("Diff: " + diff + "\n");
-        }
-        else{
+        } else {
             System.out.println("Matrix is not perfect.");
         }
     }

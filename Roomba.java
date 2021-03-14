@@ -1,4 +1,4 @@
-package HackerRank;
+//
 //BinarySearch
 
 public class Roomba {
@@ -23,7 +23,7 @@ public class Roomba {
     }
 
     public static void main(String[] args) {
-        String[] moves = {"NORTH", "EAST"};
+        String[] moves = { "NORTH", "EAST" };
         System.out.println(solve(moves, 1, 1));
     }
 

@@ -1,4 +1,4 @@
-package HackerRank;
+//
 
 public class OddNumberOfDigits {
     public static int solve(int[] nums) {
@@ -18,7 +18,7 @@ public class OddNumberOfDigits {
     }
 
     public static void main(String[] args) {
-        int[] nums = {1, 3, 800, 22, 5};
+        int[] nums = { 1, 3, 800, 22, 5 };
         System.out.println(solve(nums));
 
     }

@@ -1,4 +1,4 @@
-package HackerRank;
+//
 
 public class InverseFactorial {
     public static int solve(int a) {

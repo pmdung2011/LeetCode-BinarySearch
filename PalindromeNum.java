@@ -1,4 +1,4 @@
-package HackerRank;
+//
 
 class PalindromeNum {
     public boolean isPalindrome(int x) {
@@ -10,8 +10,8 @@ class PalindromeNum {
             return true;
         }
         while (x > 0) {
-            newNum = newNum * 10 + x % 10; //Reverse the org num
-            x /= 10;//Remove the last digit
+            newNum = newNum * 10 + x % 10; // Reverse the org num
+            x /= 10;// Remove the last digit
         }
         return newNum - orgNum == 0;
     }

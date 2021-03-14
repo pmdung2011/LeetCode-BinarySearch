@@ -1,4 +1,4 @@
-package HackerRank;
+//
 
 public class SwapEvenNum {
     public int[] solve(int[] nums) {
@@ -14,7 +14,7 @@ public class SwapEvenNum {
                 int tmp = nums[i];
                 nums[i] = nums[index];
                 nums[index] = tmp;
-                //After swap, reset the index
+                // After swap, reset the index
                 index = -1;
             }
         }

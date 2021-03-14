@@ -1,4 +1,4 @@
-package HackerRank;
+//
 
 public class GreatestCommonDivisor {
     public static int gcd(int a, int b) {

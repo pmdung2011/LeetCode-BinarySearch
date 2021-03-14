@@ -1,4 +1,4 @@
-package HackerRank;
+//
 
 public class LongestDupString {
     public static int solve(String s) {

@@ -54,6 +54,7 @@ public class ThreeSum {
         return res;
     }
 
+    //Standard solution
     public static List<List<Integer>> solve2(int[] nums, int target) {
         List<List<Integer>> res = new ArrayList<>();
         if (nums.length < 3) return res;

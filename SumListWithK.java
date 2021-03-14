@@ -1,4 +1,4 @@
-package HackerRank;
+//
 
 //Given a list of integers nums sorted in ascending order and an integer k, return whether any two elements from the list add up to k. You may not use the same element twice.
 //
@@ -19,7 +19,7 @@ public class SumListWithK {
     }
 
     public static void main(String[] args) {
-        int[] nums = {-1, 0};
+        int[] nums = { -1, 0 };
         int k = 0;
         System.out.println(solve(nums, k));
     }

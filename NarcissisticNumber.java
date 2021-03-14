@@ -1,10 +1,10 @@
-package HackerRank;
+//
 
 import java.util.Arrays;
 
 public class NarcissisticNumber {
     public static boolean solve(int n) {
-        //count the length of the number
+        // count the length of the number
         int org = n;
         int org2 = n;
         int length = 1;
@@ -13,7 +13,7 @@ public class NarcissisticNumber {
             length++;
         }
         System.out.println(length);
-        //split n into digits
+        // split n into digits
         int[] num = new int[length];
         int i = 0;
         while (org > 0) {
@@ -22,7 +22,7 @@ public class NarcissisticNumber {
             num[i++] = digit;
         }
         System.out.println(Arrays.toString(num));
-        //loop through the array to calculate
+        // loop through the array to calculate
         int sum = 0;
         for (int j : num) {
             sum += Math.pow(j, length);

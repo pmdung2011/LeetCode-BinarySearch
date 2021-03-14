@@ -1,4 +1,4 @@
-package HackerRank;
+//
 
 import java.util.Arrays;
 
@@ -16,7 +16,7 @@ public class PushZerosToEnd {
     }
 
     public static void main(String[] args) {
-        int[] nums = {0, 1, 2, 0, 3};
+        int[] nums = { 0, 1, 2, 0, 3 };
         System.out.println(Arrays.toString(solve(nums)));
     }
 }

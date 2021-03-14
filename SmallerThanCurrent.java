@@ -1,4 +1,4 @@
-package HackerRank;
+//
 
 import java.util.Arrays;
 
@@ -14,7 +14,7 @@ public class SmallerThanCurrent {
     public static int[] smallerNumbersThanCurrent(int[] nums) {
         int counter = 0;
         int[] count = new int[nums.length];
-        for (int i = 0;i < nums.length;i++) {
+        for (int i = 0; i < nums.length; i++) {
             for (int num : nums) {
                 if (nums[i] > num) {
                     counter++;
@@ -27,8 +27,9 @@ public class SmallerThanCurrent {
 
         return count;
     }
-    public static void main(String[] args){
-        int[] a = {8,1,2,2,6};
+
+    public static void main(String[] args) {
+        int[] a = { 8, 1, 2, 2, 6 };
         System.out.print("Original array: ");
         System.out.println(Arrays.toString(a));
         System.out.println("Compared Array: " + Arrays.toString(smallerNumbersThanCurrent(a)));

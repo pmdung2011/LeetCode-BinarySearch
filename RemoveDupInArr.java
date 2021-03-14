@@ -1,4 +1,4 @@
-package HackerRank;
+//
 
 import java.util.*;
 
@@ -14,44 +14,44 @@ Your function should return length = 2, with the first two elements of nums bein
 It doesn't matter what you leave beyond the returned length.
 * */
 public class RemoveDupInArr {
-    public static int removeDuplicates(int[] nums){
-        //assume need extra space
+    public static int removeDuplicates(int[] nums) {
+        // assume need extra space
 
-        //Using Set
-//        Set<Integer> set = new HashSet<>();
-//        for (int value : nums) {
-//            set.add(value);
-//        }
-//        return set.size();
+        // Using Set
+        // Set<Integer> set = new HashSet<>();
+        // for (int value : nums) {
+        // set.add(value);
+        // }
+        // return set.size();
 
-        //Using HashMap
-//        HashMap<Integer,Boolean> map = new HashMap<>();
-//        for (int value : nums) {
-//            map.putIfAbsent(value, true);
-//        }
-//
-//        return map.size();
+        // Using HashMap
+        // HashMap<Integer,Boolean> map = new HashMap<>();
+        // for (int value : nums) {
+        // map.putIfAbsent(value, true);
+        // }
+        //
+        // return map.size();
 
-        //The goal is to bring all the unique nums to the front of the array
-        //1 1 2 3
-        //1 2 2 3
-        //1 2 3 3
-        //    j
+        // The goal is to bring all the unique nums to the front of the array
+        // 1 1 2 3
+        // 1 2 2 3
+        // 1 2 3 3
+        // j
         // new array size is j + 1
-        if(nums.length==0){
+        if (nums.length == 0) {
             return 0;
         }
-        int j=0;
-        for(int i=1;i<nums.length;i++){
-            if(nums[j]!=nums[i]){
-                nums[++j]=nums[i];
+        int j = 0;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[j] != nums[i]) {
+                nums[++j] = nums[i];
             }
         }
-        return j+1;
+        return j + 1;
     }
 
-    public static void main(String[] args){
-        int[] nums = {1,1,2};
+    public static void main(String[] args) {
+        int[] nums = { 1, 1, 2 };
         System.out.println(removeDuplicates(nums));
     }
 }
