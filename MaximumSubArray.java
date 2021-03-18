@@ -14,7 +14,7 @@ public class MaximumSubArray {
     }
 
     //Using sliding window technique with size is 2
-
+    //Cannot apply to this problem since the size of subarray is not fixed to 2
     /**
      * Given an array of integers of size ‘n’.
         Our aim is to calculate the maximum sum of ‘k’
