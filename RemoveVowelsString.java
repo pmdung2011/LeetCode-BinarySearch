@@ -1,5 +1,5 @@
 ///*
-*1119. Remove Vowels from a String*Given a string S,remove the vowels'a','e','i','o',and'u'from it,and return the new string.**/
+//1119. Remove Vowels from a String*Given a string S,remove the vowels'a','e','i','o',and'u'from it,and return the new string.**/
 
 import java.util.HashSet;
 import java.util.Set;

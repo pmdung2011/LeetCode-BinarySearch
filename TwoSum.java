@@ -17,9 +17,10 @@ public class TwoSum {
         return new int[]{};
     }
 
+    //USING TWO POINTERS
+    //ONLY WORK WITH SORTED ARRAY
     //O(n) time
     //O(1) space
-    //
     public static int[] solve2(int[] nums, int sum){
         int left = 0;
         int right = nums.length-1;

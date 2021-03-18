@@ -13,14 +13,12 @@ public class MaximumSubArray {
         return maxSum;
     }
 
-    public static void main(String[] args) {
-        int[] a = {13, -3, -25, 20, -3, -16, -23, 18, 20};
-        int result = maxSubArray(a);
-        System.out.println("Result: " + result);
-        System.out.println(solve(a));
-    }
-
     //Using sliding window technique with size is 2
+
+    /**
+     * Given an array of integers of size ‘n’.
+        Our aim is to calculate the maximum sum of ‘k’
+     */
     public static int solve(int[] nums){
         if (nums.length < 2) return -1;
 
@@ -41,7 +39,12 @@ public class MaximumSubArray {
         return max_sum;
     }
 
-
+    public static void main(String[] args) {
+        int[] a = {-2,1,-3,4,-1,2,1,-5,4};
+        int result = maxSubArray(a);
+        System.out.println("Result: " + result);
+        System.out.println(solve(a));
+    }
 
 }
 /*
