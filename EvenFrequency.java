@@ -3,7 +3,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class EvenFrequency {
-    public boolean solve(int[] a) {
+    public static boolean solve(int[] a) {
         if (a.length % 2 != 0)
             return false;
 
@@ -17,7 +17,7 @@ public class EvenFrequency {
             else {
                 if (count % 2 != 0)
                     return false;
-                count = 1;
+                count = 1; //reset counter
             }
         }
 
