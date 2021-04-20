@@ -1,7 +1,7 @@
 public class AddBinaryString {
     public static String addBinary(String a, String b) {
         StringBuilder result = new StringBuilder();
-        int sum = 0;
+        int sum;
         int carry = 0;
         int indexA = a.length() - 1;
         int indexB = b.length() - 1;
