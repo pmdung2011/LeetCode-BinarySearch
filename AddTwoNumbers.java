@@ -25,6 +25,6 @@ public class AddTwoNumbers {
             res.next = new ListNode(carry);
         }
 
-        return dummy;
+        return dummy.next;
     }
 }
