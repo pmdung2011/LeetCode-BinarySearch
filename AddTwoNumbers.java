@@ -1,58 +1,30 @@
 //2.Add Two Numbers - Leetcode
 public class AddTwoNumbers {
     public ListNode solve(ListNode l1, ListNode l2){
-        //Temp nodes for traversing the lists
-        ListNode temp1 = l1;
-        ListNode temp2 = l2;
-
-        //Result node
         ListNode res = new ListNode(0);
+        ListNode p = l1, q = l2, dummy = res;
+        int carry = 0;
 
-        //Head of result list
-        ListNode head_res = res;
+        //Traversing both lists, do not need to care which will end first
+        while(p != null || q != null){
+            int x = (p != null) ? p.val : 0;
+            int y = (q != null) ? q.val : 0;
+            int sum = x + y + carry;
+            carry = sum / 10;
 
-        int carry =0;
+            //Store to result list
+            res.next = new ListNode(sum % 10);
 
-        //Traverse both lists
-        while(temp1 != null && temp2 != null){
-            int data = temp1.val + temp2.val + carry;
-            int remain = data % 10;
-            carry = data /10;
-
-            res.next = new ListNode(remain);
-
-            //Moving pointers
+            //Keep moving pointers
             res = res.next;
-            temp1 = temp1.next;
-            temp2 = temp2.next;
+            if(p != null ) p = p.next;
+            if(q != null) q = q.next;
         }
-
-        //In case l1 still remains
-        while(temp1 != null){
-            int data = temp1.val + carry;
-            int rem = data%10;
-            carry = data/10;
-            res.next = new ListNode(rem);
-
-            temp1 = temp1.next;
-            res = res.next;
-        }
-
-        //In case l2 still remain
-        while(temp2 != null){
-            int data = temp2.val +carry;
-            int rem = data%10;
-            carry = data/10;
-            res.next = new ListNode(rem);
-
-            temp2 = temp2.next;
-            res = res.next;
-        }
-        //if any carry is left
-        if(carry != 0){
+        //In case carry still remains
+        if(carry > 0){
             res.next = new ListNode(carry);
-            res = res.next;
         }
-        return head_res;
+
+        return dummy;
     }
 }
