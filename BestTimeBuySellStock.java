@@ -10,6 +10,7 @@ public class BestTimeBuySellStock {
         return maxProfit;
     }
 
+    //This solution is faster
     public static int solve(int[] prices){
         if(prices == null) return 0;
         int bought = prices[0]; //Assume we bought the stock in the first day
