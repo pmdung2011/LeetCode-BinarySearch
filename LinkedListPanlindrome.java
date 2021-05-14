@@ -1,5 +1,5 @@
 //234. Palindrome Linked List
-
+//https://leetcode.com/problems/palindrome-linked-list/discuss/1137027/JS-Python-Java-C%2B%2B-or-Easy-Floyd's-%2B-Reversal-Solution-w-Explanation
 public class LinkedListPanlindrome {
     public boolean solve(ListNode head){
         ListNode fast = head;
@@ -9,11 +9,7 @@ public class LinkedListPanlindrome {
             fast = fast.next.next;
             slow = slow.next.next;
         }
-
-        //in case odd nodes, move slow one more step
-        if(fast != null){
-            slow = slow.next;
-        }
+        //No need to check odd/even length
 
         ListNode end = reverse(slow);
         ListNode start = head;
@@ -34,7 +30,7 @@ public class LinkedListPanlindrome {
     private static ListNode reverse(ListNode head){
         ListNode prev = null;
         ListNode cur = head;
-        ListNode next = null;
+        ListNode next;
 
         while(cur != null){
             next = cur.next;

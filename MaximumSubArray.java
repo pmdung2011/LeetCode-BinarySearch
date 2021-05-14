@@ -4,7 +4,6 @@ import java.lang.Math;
 public class MaximumSubArray {
     public static int maxSubArray(int[] array) {
         int maxSum = array[0];
-        int n = array.length;
         int curr_sum = 0;
         for (int j : array) {
             curr_sum = Math.max(curr_sum + j, j);
