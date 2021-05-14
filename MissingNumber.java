@@ -6,7 +6,11 @@ public class MissingNumber {
             sum += i;
             sum_in += nums[i];
         }
-
+        int test = 0;
+        for(int i = 1; i <= nums.length; i++){
+            test += i;
+        }
+        System.out.println(test);
         System.out.println(sum);
         System.out.println(sum_in);
         return (sum+nums.length)-sum_in;

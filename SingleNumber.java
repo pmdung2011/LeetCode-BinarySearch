@@ -1,7 +1,5 @@
-
-
 import java.util.*;
-
+//136. Single Number
 /*
 * Given a non-empty array of integers, every element appears twice except for one. Find that single one.
 * Input: [2,2,1]
@@ -52,24 +50,24 @@ public class  SingleNumber {
     }
 
 
-    public static int solve(int[] nums){
-        int[] freg = new int[nums.length+1];
-        int res = 0;
-        for(int i : nums){
-            freg[i]++;
-        }
-        for (int i = 0; i < freg.length ; i++) {
-            if(freg[i] == 1){
-                res = i;
-                break;
-            }
-        }
-        return res;
-    }
+//    public static int solve(int[] nums){
+//        int[] freg = new int[nums.length+1];
+//        int res = 0;
+//        for(int i : nums){
+//            freg[i]++;
+//        }
+//        for (int i = 0; i < freg.length ; i++) {
+//            if(freg[i] == 1){
+//                res = i;
+//                break;
+//            }
+//        }
+//        return res;
+//    }
     public static void main (String[] args){
 
         int[] nums = {2,2,1,1,3};
-        System.out.println(solve(nums));
+        System.out.println(uniqueMath(nums));
        // System.out.println(c);
 
     }
