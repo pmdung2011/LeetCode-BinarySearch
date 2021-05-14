@@ -1,0 +1,14 @@
+//70. Climbing Stairs
+public class ClimbingStairs {
+    public int solve(int n){
+        int[] dp = new int[n+1];
+        dp[0] = 1;
+        dp[1] = 1;
+
+        for(int i = 2; i <= n; i++){
+            dp[i] = dp[i-1] + dp[i-2];
+        }
+
+        return dp[n]; //the final result will be the combination of the two previous steps
+    }
+}
