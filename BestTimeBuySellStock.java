@@ -31,7 +31,20 @@ public class BestTimeBuySellStock {
         }
         return maxProfit;
     }
+    public static int solve3(int[] nums){
+        int bought = nums[0];
+        int profit = 0;
 
+        for(int i : nums){
+            if(i <= bought){
+                bought = i;
+            }
+            else{
+                profit =  Math.max(profit, i - bought);
+            }
+        }
+        return profit;
+    }
 
     public static void main(String[] args) {
         int[] stocks = {7, 1, 5, 3, 6, 4};
